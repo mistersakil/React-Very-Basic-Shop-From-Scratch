@@ -7,6 +7,7 @@
   "dependencies": {
     "bootstrap": "latest",
     "react": "16.12.0",
+    "react-bootstrap": "1.0.1",
     "react-dom": "16.12.0",
     "react-scripts": "3.0.1"
   },

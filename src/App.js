@@ -1,10 +1,14 @@
 import React from "react";
-import "./styles.css";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./Components/Layout/Navbar";
+import Master from "./Components/Layout/Master";
+import productsApi from "./Components/Data/Products";
 export default function App() {
   return (
-    <div className="App">
-      <h1>React Very Basic Shop From Scratch</h1>
-    </div>
+    <React.Fragment>
+      <Master productsApi={productsApi}>
+        <Navbar />
+      </Master>
+    </React.Fragment>
   );
 }
