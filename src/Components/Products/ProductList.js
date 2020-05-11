@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { Card, CardColumns, Button } from "react-bootstrap";
+import { CardColumns } from "react-bootstrap";
 import Product from './Product'
 import {ProductsContextApi} from '../../App'
 

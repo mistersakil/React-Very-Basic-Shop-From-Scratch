@@ -7,7 +7,7 @@ export const ProductsContextApi = createContext()
 export default function App() {
 	const defaultProductsFromApi = productsApi
 	const [products, setProducts] = React.useState(defaultProductsFromApi)
-	const [keyword, setKeyword] = React.useState()
+	const [keyword, setKeyword] = React.useState('')
 	useEffect(() =>{		
 		if(keyword !== undefined){
 			const filteredProducts = defaultProductsFromApi.filter(product => {
