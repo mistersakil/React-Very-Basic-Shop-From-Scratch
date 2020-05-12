@@ -3,12 +3,12 @@ import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
 import {ProductsContextApi} from '../../App'
 
 export default props => {
-  const {setKeyword} = useContext(ProductsContextApi)
-  const [navKeyword, setNavKeyword] = React.useState()
-  const keywordHandler = event => {
-    const keywords = event.target.value.toLowerCase()
-    setNavKeyword(keywords)
-    setKeyword(keywords)
+  const {productSearchHandler} = useContext(ProductsContextApi)
+  const [navKeyword, setNavKeyword] = React.useState('')
+  const navKeywordHandler = event => {
+    const keyword = event.target.value.toLowerCase()
+    setNavKeyword(keyword)
+    productSearchHandler(keyword)
   }
   return (
     <Navbar bg="primary" variant="dark" expand="sm" fixed="top">
@@ -19,7 +19,7 @@ export default props => {
           <Nav.Link href="./">Home</Nav.Link>
         </Nav>
         <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={keywordHandler} name="keyword" value={navKeyword}/>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={navKeywordHandler} name="keyword" value={navKeyword}/>
         </Form>
       </Navbar.Collapse>
     </Navbar>

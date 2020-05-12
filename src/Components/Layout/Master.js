@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import ProductList from "../Products/ProductList";
+import { Container, Row, Col } from "react-bootstrap"
+import ProductList from "../Products/ProductList"
+import CartSidebar from "../Cart/CartSidebar"
 export default props => {
   
   const productsApi = props.productsApi;
@@ -11,7 +12,9 @@ export default props => {
         <Col sm={9}>
           <ProductList productsApi={productsApi} />
         </Col>
-        <Col sm={3}>Cart</Col>
+        <Col sm={3}>
+        <CartSidebar />
+        </Col>
       </Row>
     </Container>
   );

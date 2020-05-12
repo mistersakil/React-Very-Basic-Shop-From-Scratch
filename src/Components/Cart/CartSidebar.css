@@ -1,0 +1,23 @@
+.cartSidebar{
+	position: fixed;
+    width: 24%;
+    right: 1%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: 90vh;
+    overflow-x: hidden;
+}
+.cartItems button{
+    height: 18px;
+    width: 18px;
+    text-align: center;
+    line-height: 0;
+    margin-right: 5px;
+    padding: 0;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.cartItems small{
+	font-weight: 700;
+    float: right;
+}
