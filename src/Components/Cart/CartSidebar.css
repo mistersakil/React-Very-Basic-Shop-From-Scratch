@@ -17,7 +17,31 @@
     font-size: 14px;
     box-sizing: border-box;
 }
-.cartItems small{
-	font-weight: 700;
-    float: right;
+.cartItems .cartQuantity{
+    border: 0px solid rgba(0,123,255,.5);
+    position: absolute;
+    right: 10%;
+    overflow: hidden;
+    height: 35px;
+    width: 35px;
+    margin: 0;
+    padding: 0;
+    top: 18%;
 }
+.cartItems .cartQuantity span{
+        border-style: solid;
+    border: 10px solid rgb(0 0 0 / 0%);
+    cursor: pointer;
+    position: absolute;
+}
+.cartItems .cartQuantity span:first-child{
+    border-bottom-color: #28a745;
+    top: -10px;
+}
+.cartItems .cartQuantity span:last-child{    
+    border-top-color: #bd2130;
+    top: 20px;
+    
+}
+
+

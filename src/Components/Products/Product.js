@@ -12,7 +12,7 @@ export default ({id, image_url, title, body, price}) => {
   
   const {setCartItemsHandler, cartItems} = useContext(ProductsContextApi)
   const addToCartHandler = event => {
-    setCartItemsHandler(event.target.dataset.id)
+    setCartItemsHandler(parseInt(event.target.dataset.id))
   }
   
   return (
