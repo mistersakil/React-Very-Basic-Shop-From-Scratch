@@ -25,7 +25,7 @@ export default ({id, image_url, title, body, price}) => {
       <Card.Footer>
           <Button variant="info" onClick={addToCartHandler} data-id={id} name={`product${id}`}>Add To Cart</Button>               
           <span className="btn-warning" style={priceStyle}>
-          {price}
+          ${price}
         </span>
       </Card.Footer>
     </Card>

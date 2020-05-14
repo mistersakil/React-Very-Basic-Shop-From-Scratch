@@ -17,13 +17,12 @@ export default function App() {
 	}
 	const setCartItemsHandler = id => {
 		let newItem = products.find(item => item.id == id)
-		let existingItem = {}
 		if(cartItems.length > 0) {
 			return cartItems.find(item => item.id == id)
 			? cartItems 
-			: setCartItems(items => [...items, newItem])
+			: setCartItems(items => [newItem, ...items])
 		}
-		return setCartItems(items => [...items, newItem])
+		return setCartItems(items => [newItem, ...items])
 	}
 
 	return (
