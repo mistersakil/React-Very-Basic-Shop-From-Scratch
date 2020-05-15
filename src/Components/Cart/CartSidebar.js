@@ -1,14 +1,14 @@
 import React, {Fragment, useContext} from 'react'
-import {ListGroup, Table} from 'react-bootstrap'
+import {ListGroup, Table, Button} from 'react-bootstrap'
 import {ProductsContextApi} from '../../App'
 import './CartSidebar.css'
 import CartItem from './CartItem'
 export default props => {
-	const {cartItems} = useContext(ProductsContextApi)
+	const {cartItems, clearCartItemsHandler} = useContext(ProductsContextApi)
 	return (
 		<Fragment>	        
 			<section className="cartSidebar">
-				<h3 className="text-center text-secondary">Cart Items - {cartItems.length}</h3>
+				<h3 className="text-center text-secondary">Cart Items : {cartItems.length}</h3>
 				<hr/>
 				
 				<ListGroup variant="flush" className="cartItems">
@@ -34,8 +34,20 @@ export default props => {
 				</tfoot>
 				</Table>
 				}
-				
+								
 				</ListGroup>
+				{ cartItems.length > 0 &&	
+				<div className="text-center">
+					<Button variant="secondary" onClick={() => clearCartItemsHandler() }>Clear Cart Items</Button> 
+					<span> | </span>
+					<a className="btn btn-primary text-light">Checkout</a>
+				</div>
+				}
+				{ cartItems.length == 0 &&	
+				<div className="jumbotron text-center text-primary">
+					<h5><em>Your cart is empty, please add some products</em></h5>
+				</div>
+				}
 			</section>
 		</Fragment>
 

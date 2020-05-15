@@ -42,11 +42,15 @@ export default function App() {
 		})
 
 	}
-
+	const removeCartItemsHandler = id => setCartItems(items => items.filter(item => item.id !== id))
+	const clearCartItemsHandler = () => {
+		const confirm = window.confirm('Are you sure to perform this action?')
+		return confirm ? setCartItems([]) : false
+	}
 
 	return (
 	<React.Fragment>
-		<ProductsContextApi.Provider value={{products,productSearchHandler,cartItems, setCartItemsHandler, updateCartItemsHandler}}>
+		<ProductsContextApi.Provider value={{products,productSearchHandler,cartItems, setCartItemsHandler, updateCartItemsHandler, removeCartItemsHandler, clearCartItemsHandler}}>
 	    	<Master productsApi={productsApi}>
 	        	<Navbar />
 	      	</Master>
