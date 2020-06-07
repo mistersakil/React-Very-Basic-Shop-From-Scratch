@@ -4,7 +4,7 @@ import {ProductsContextApi} from '../../App'
 import './CartSidebar.css'
 import CartItem from './CartItem'
 export default props => {
-	const {cartItems, clearCartItemsHandler} = useContext(ProductsContextApi)
+	const {cartItems, clearCartItemsHandler, theme} = useContext(ProductsContextApi)
 	return (
 		<Fragment>	        
 			<section className="cartSidebar">
@@ -14,7 +14,7 @@ export default props => {
 				<ListGroup variant="flush" className="cartItems">
 				{ cartItems.length > 0 &&	
 				
-				<Table responsive>	
+				<Table responsive className={theme && 'text-light' }>	
 				<thead>
 					<tr>
 						<th>Product</th>

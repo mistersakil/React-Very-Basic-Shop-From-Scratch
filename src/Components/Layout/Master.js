@@ -1,21 +1,20 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap"
-import ProductList from "../Products/ProductList"
-import CartSidebar from "../Cart/CartSidebar"
+import React, {useContext} from "react";
+import {BrowserRouter as Router} from 'react-router-dom'
+import { Container , Row} from "react-bootstrap"
+import {ProductsContextApi} from '../../App'
+import Routes from './Routes'
+
 export default props => {
+  const {theme} = useContext(ProductsContextApi)  
   
-  const productsApi = props.productsApi;
   return (
-    <Container fluid>
-      {props.children}
-      <Row style={{ marginTop: "70px" }}>
-        <Col sm={8}>
-          <ProductList productsApi={productsApi} />
-        </Col>
-        <Col sm={4}>
-        <CartSidebar />
-        </Col>
+    <Router>
+    <Container fluid className={theme && 'bg-dark'}>
+      <Row style={{ paddingTop: "70px" }}>
+      {props.children}      
+        <Routes />      
       </Row>
     </Container>
+    </Router>
   );
 };
