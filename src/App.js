@@ -1,4 +1,4 @@
-import React, {createContext, useState} from "react";
+import React, {Fragment, createContext, useState} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./Components/Layout/Navbar";
 import Master from "./Components/Layout/Master";
@@ -21,12 +21,12 @@ export default function App() {
 	}
 	const themeChangeHandler = () => setTheme(prevTheme => !prevTheme)
 	return (
-	<React.Fragment>
+	<Fragment>
 		<ProductsContextApi.Provider value={{products,productSearchHandler,cartItems, setCartItemsHandler, updateCartItemsHandler, removeCartItemsHandler, clearCartItemsHandler, themeChangeHandler, theme}}>
 	    	<Master>
 	        	<Navbar />
 	      	</Master>
 	  	</ProductsContextApi.Provider>
-	</React.Fragment>
+	</Fragment>
 	);
 }

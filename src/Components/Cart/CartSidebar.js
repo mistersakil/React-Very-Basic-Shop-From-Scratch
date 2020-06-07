@@ -7,7 +7,7 @@ export default props => {
 	const {cartItems, clearCartItemsHandler, theme} = useContext(ProductsContextApi)
 	return (
 		<Fragment>	        
-			<section className="cartSidebar">
+			<section className={cartItems.length == 0 ? 'cartSidebar hidden' : 'cartSidebar'}>
 				<h3 className="text-center text-secondary">Cart Items : {cartItems.length}</h3>
 				<hr/>
 				
